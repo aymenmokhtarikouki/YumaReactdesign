@@ -1,6 +1,7 @@
+import { RouterProvider } from 'react-router';
+import { router } from './routes';
+
 export default function App() {
-  return (
-    <div className="size-full flex items-center justify-center">
-    </div>
-  );
+  // Force Vite HMR rebuild
+  return <RouterProvider router={router} />;
 }

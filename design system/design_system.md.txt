@@ -1,0 +1,140 @@
+Here is a comprehensive, technical Design System extracted from your screenshots. You can share this directly with Claude or any other AI coding assistant to ensure any newly generated pages match the exact "DNA" and aesthetic of your current app.
+
+---
+
+### **App DNA & Core Aesthetic**
+
+* **Minimalist & Food-Forward:** Clean UI that lets the high-quality food photography stand out.
+* **Soft & Approachable:** Heavy use of rounded corners (large border radii) on cards, images, and buttons.
+* **High Contrast:** Bright white backgrounds contrasted with deep, rich dark navy/slate for primary text and actions.
+* **Clearly Segregated:** Use of subtle drop shadows, light gray container backgrounds, and thin borders to separate content blocks (cards) rather than dense dividers.
+
+---
+
+### **1. Color Palette**
+
+Use these exact hex codes (or their Tailwind CSS equivalents) to maintain consistency.
+
+| Role | Color Name | Hex Code | Usage |
+| --- | --- | --- | --- |
+| **Primary Action** | Deep Slate | `#141722` | Primary buttons (Track Order, Add to cart), Active Tab text, Main Headings. |
+| **Background** | Pure White | `#FFFFFF` | Default screen background, Card backgrounds, Bottom navigation bar. |
+| **Surface Off-White** | Light Ash | `#F8F9FA` | App background behind cards (e.g., the gray area behind the order cards), subtle input backgrounds. |
+| **Text (Primary)** | Dark Slate | `#141722` | Titles, User names, Prices, Important values. |
+| **Text (Secondary)** | Medium Gray | `#6B7280` | Subtitles, timestamps ("Today, 19:45"), descriptions, inactive tab text. |
+| **Text (Tertiary)** | Light Gray | `#9CA3AF` | Placeholder text, very minor metadata. |
+| **Borders** | Soft Gray | `#E5E7EB` | Card borders, item dividers, input borders. |
+| **Semantic: Alert** | Notification Red | `#EF4444` | Notification badges (e.g., "9" on chat icon). |
+| **Semantic: Success** | Checkmark Green | `#10B981` | Delivered checkmark icons. |
+
+---
+
+### **2. Typography System**
+
+The app uses a modern, clean geometric sans-serif font (similar to **Inter**, **Poppins**, or **Plus Jakarta Sans**).
+
+| Hierarchy | Weight | Size | Line Height | Usage Example |
+| --- | --- | --- | --- | --- |
+| **Screen Title** | Extra Bold (800) | 28px | 34px | "Active", "Subscriptions" (Top Tabs) |
+| **Header 1 (H1)** | Bold (700) | 20px | 28px | "Giulia R.", "About the Kitchen" |
+| **Header 2 (H2)** | Semi-Bold (600) | 16px | 24px | "Kung Pao Chicken", "1x Caprese Salad" |
+| **Body (Bold)** | Bold (700) | 14px | 20px | Prices ("€28.81"), "Track Order" button text |
+| **Body (Regular)** | Regular (400) | 14px | 20px | Item descriptions, Address text |
+| **Metadata** | Medium (500) | 12px | 16px | "Mar 12, 13:20", "124 ratings", Bottom Nav labels |
+
+---
+
+### **3. Spacing, Layout & Grid**
+
+* **Screen Padding:** `20px` or `24px` on the left and right edges of the screen.
+* **Gap between Cards:** `16px` vertically.
+* **Internal Card Padding:** `16px` to `20px` uniformly.
+* **Gap between distinct sections:** `32px` to `40px` (e.g., between "About the Kitchen" and "Signature Menu").
+
+---
+
+### **4. Borders, Radii & Elevation**
+
+To maintain the soft, friendly look, strict adherence to border radii is required.
+
+* **`radius-sm` (8px):** Small badges, tags, input fields.
+* **`radius-md` (12px):** Action buttons (Rate Cook, Reorder), Image thumbnails (e.g., the 1x Caprese Salad image).
+* **`radius-lg` (16px):** Standard content cards (Order cards, User profile cards).
+* **`radius-xl` (24px):** Large hero cards, Bottom sheets, top-level containers.
+* **`radius-full` (9999px):** Avatar images, Notification badges.
+* **Shadows:** * **Cards:** Very subtle drop shadow (e.g., `box-shadow: 0 2px 10px rgba(0,0,0,0.03)`).
+* **Bottom Nav:** Upward shadow (e.g., `box-shadow: 0 -2px 10px rgba(0,0,0,0.05)`).
+
+
+
+---
+
+### **5. Component Specifications**
+
+#### **A. Buttons**
+
+* **Primary Button:** * Background: `#141722`
+* Text: `#FFFFFF`, 14px, Bold.
+* Padding: 16px vertical.
+* Border Radius: 12px.
+* *Example: "Track Order", "Reorder"*
+
+
+* **Secondary Button:**
+* Background: `#FFFFFF`
+* Text: `#141722`, 14px, Bold.
+* Border: 1px solid `#E5E7EB`.
+* Border Radius: 12px.
+* *Example: "Rate Cook", "Message"*
+
+
+* **Tags/Pills (Metadata):**
+* Background: `#F8F9FA` or purely `#FFFFFF` with thin border.
+* Text: `#141722`, 12px, Bold.
+* Padding: 6px 12px.
+* Border Radius: 9999px (Pill shape).
+* *Example: "Dairy Free", "15 min"*
+
+
+
+#### **B. Navigation Tabs (Top)**
+
+* **Active Tab:** 28px, Extra Bold, `#141722`. Bottom border is a thick line (`approx 4px`) colored `#141722` with rounded ends.
+* **Inactive Tab:** 28px, Bold, `#9CA3AF`. No underline.
+* **Spacing:** Tabs are separated by `16px`.
+
+#### **C. Bottom Navigation Bar**
+
+* **Container:** `#FFFFFF` background, solid 1px border on top (`#E5E7EB`).
+* **Icons:** 24x24px stroke icons (not filled, unless active).
+* **Labels:** 10px or 12px Semi-Bold text below icons.
+* **Active State:** Icon and text become `#141722`.
+* **Inactive State:** Icon and text are `#9CA3AF`.
+* **Badges:** Absolute positioned top-right of the icon. `#EF4444` background, white text, bold, fully rounded.
+
+#### **D. Cards (List Items)**
+
+* **Container:** White background, 16px border radius, thin gray border (`#E5E7EB`) OR subtle shadow.
+* **Layout:** * Header: Avatar/Name on left, Actions (chat bubble icon / status) on right.
+* Body: Image thumbnail (roughly 64x64px, 12px radius) on left, Title + Quantity on right.
+* Footer: Full-width buttons or side-by-side buttons.
+
+
+
+---
+
+### **Prompt Template for Claude / Coding Assistant**
+
+Copy and paste the text below along with your feature request whenever you want your AI to build a new page:
+
+> **System UI Instructions:** > You are generating UI code for my food-app ecosystem. You MUST strictly adhere to the following design system tokens and rules:
+> **Colors:** Primary Background: White. Surface/Secondary BG: `#F8F9FA`. Primary Dark/Text: `#141722`. Secondary Text: `#6B7280`. Borders: `#E5E7EB`. Notification/Error: `#EF4444`.
+> **Typography:** Clean Sans-serif. H1s are large and Extra Bold (approx 24-28px). Body text is 14px-16px. Prices and primary button text must be Bold.
+> **Radii:** Cards use 16px radius. Standard buttons use 12px radius. Tags/Badges are fully rounded pills. Image thumbnails use 12px radius.
+> **Component DNA:** > - Primary buttons are full-width or flex-1, `#141722` background with white bold text.
+> * Secondary buttons are white background with 1px `#E5E7EB` border and `#141722` text.
+> * Cards must have ample internal padding (16px+) and either a 1px `#E5E7EB` border or a very subtle drop shadow `rgba(0,0,0,0.03)`.
+> * Top Navigation tabs use extra-large text; the active tab is `#141722` with a 4px thick bottom border. Inactive tabs are `#9CA3AF`.
+> Ensure all layouts are highly breathable with generous margins (at least 20px padding on the main screen edges, 16px gaps between list items).
+> 
+>

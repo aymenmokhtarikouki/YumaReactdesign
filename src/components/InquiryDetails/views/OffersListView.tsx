@@ -100,7 +100,7 @@ const OffersListView = ({ onSelectQuote }: { onSelectQuote: (quote: Quote) => vo
           </div>
 
           {/* Action Button - Exact Subscription DNA */}
-          <button className="w-full h-12 bg-gray-100 text-gray-900 rounded-2xl font-bold text-[15px] flex items-center justify-center active:bg-gray-200 transition-colors">
+          <button className="w-full h-12 bg-gray-50 text-gray-900 rounded-2xl font-bold text-[15px] flex items-center justify-center active:bg-gray-100 transition-colors">
             View Offer Details
           </button>
 

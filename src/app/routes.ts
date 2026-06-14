@@ -22,6 +22,7 @@ import EditMeals from "./pages/EditMeals";
 import CakeDetail from "./pages/CakeDetail";
 import BakerPortfolio from "./pages/BakerPortfolio";
 import CakeInquiry from "./pages/CakeInquiry";
+import InquiryDetail from "./pages/InquiryDetail";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +42,7 @@ export const router = createBrowserRouter([
       { path: "kitchen/:id", Component: KitchenDetail },
       { path: "profile", Component: Profile },
       { path: "cake-inquiry", Component: CakeInquiry },
+      { path: "inquiry/:id", Component: InquiryDetail },
       { path: "baker/portfolio", Component: BakerPortfolio },
       { path: "addresses", Component: Addresses },
       { path: "payment-methods", Component: PaymentMethods },

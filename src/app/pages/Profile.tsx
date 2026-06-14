@@ -13,7 +13,8 @@ import {
   AlertTriangle,
   X,
   ChevronDown,
-  Check
+  Check,
+  Cake
 } from 'lucide-react';
 import { BottomNav } from '../components/BottomNav';
 
@@ -42,6 +43,7 @@ export default function Profile() {
   };
 
   const menuItems = [
+    { icon: Cake, label: 'Create Cake Inquiry', subtitle: 'Step-by-step custom inquiry', path: '/cake-inquiry' },
     { icon: Camera, label: 'My Portfolio', subtitle: 'Manage your kitchen cakes', path: '/baker/portfolio' },
     { icon: MapPin, label: 'Saved Addresses', subtitle: 'Home, Work, Other', path: '/addresses' },
     { icon: CreditCard, label: 'Payment Methods', subtitle: 'Apple Pay, Cards', path: '/payment-methods' },

@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Search, Bell, SlidersHorizontal, CalendarDays, Grid2x2 as Grid, Leaf, User, Truck, Utensils, Zap, Salad, Map as MapIcon, ChevronDown } from 'lucide-react';
+import { Search, Bell, SlidersHorizontal, CalendarDays, Grid2x2 as Grid, Leaf, User, Truck, Utensils, Zap, Salad, Map as MapIcon, ChevronDown, Mic } from 'lucide-react';
 import { FoodCard } from '../components/FoodCard';
 import { SectionHeader } from '../components/SectionHeader';
 import { BottomNav } from '../components/BottomNav';
 import { useNavigate } from 'react-router';
+import { Input } from '../components/ui/input';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -85,17 +86,22 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Search Bar - Solid Premium */}
-        <div className="px-4 mb-2">
+        {/* Premium Search Bar - DNA Aligned */}
+        <div className="px-4 mb-4">
           <div className="relative group">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-[18px] h-[18px] text-gray-400 group-focus-within:text-gray-900 transition-colors" />
-            <input
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10">
+              <Search className="w-5 h-5 text-gray-400 group-focus-within:text-gray-900 transition-colors duration-300" />
+            </div>
+            <Input
               type="text"
-              placeholder="Search dishes, ingredients, or cooks"
+              placeholder="Search dishes, cooks, or flavors..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-[36px] pr-4 py-3 bg-gray-50/80 rounded-2xl text-[14px] font-medium text-gray-900 placeholder:text-gray-400 focus:bg-gray-50 focus:outline-none transition-all duration-300"
+              className="w-full h-[56px] pl-12 pr-12 bg-gray-50 border-2 border-transparent rounded-2xl text-[15px] font-bold text-gray-900 placeholder:text-gray-400 placeholder:font-bold focus-visible:bg-white focus-visible:border-gray-200 focus-visible:ring-0 transition-all duration-300 shadow-none"
             />
+            <button className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-900 transition-colors">
+              <Mic className="w-5 h-5" />
+            </button>
           </div>
         </div>
 

@@ -112,7 +112,7 @@ export default function Orders() {
               Subscriptions
             </button>
             <button 
-              onClick={() => { setViewMode('inquiries'); }}
+              onClick={() => { setViewMode('inquiries'); setIsMenuOpen(false); }}
               className={`text-[20px] tracking-tight whitespace-nowrap transition-colors ${
                 viewMode === 'inquiries' ? 'font-extrabold text-gray-900' : 'font-bold text-gray-300 hover:text-gray-500'
               }`}

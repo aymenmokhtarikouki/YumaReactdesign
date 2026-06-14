@@ -1,0 +1,6 @@
+.container { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+.tabHeader { position: sticky; top: 0; background: white; z-index: 100; border-bottom: 1px solid #e0e0e0; padding: 0.5rem; display: flex; gap: 1rem; }
+.tabButton { padding: 0.5rem 1rem; cursor: pointer; border: none; background: none; font-weight: 500; }
+.tabButton.active { border-bottom: 2px solid #007bff; color: #007bff; }
+.contentArea { flex: 1; overflow-y: auto; padding: 1.5rem; }
+.viewContainer { max-width: 800px; margin: 0 auto; }

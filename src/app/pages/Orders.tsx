@@ -65,7 +65,48 @@ export default function Orders() {
   ];
 
   const inquiries = [
-    // ... inquiries data ...
+    {
+      id: "inq-101",
+      title: "Birthday Celebration",
+      eventType: "Birthday",
+      guests: 30,
+      readyBy: "Mar 30, 2025 · 6:00 PM",
+      status: "Pending",
+      quotesReceived: 0,
+      priceRange: "€120 - €180"
+    },
+    {
+      id: "inq-102",
+      title: "Engagement Party",
+      eventType: "Engagement",
+      guests: 50,
+      readyBy: "Apr 15, 2025 · 2:00 PM",
+      status: "Quoted",
+      quotesReceived: 3,
+      bestQuote: "€320",
+      priceRange: "€300 - €450"
+    },
+    {
+      id: "inq-103",
+      title: "Corporate Event",
+      eventType: "Corporate",
+      guests: 100,
+      readyBy: "May 01, 2025 · 10:00 AM",
+      status: "Received",
+      quotesReceived: 1,
+      bestQuote: "€600",
+      priceRange: "€500 - €800"
+    },
+    {
+      id: "inq-104",
+      title: "Anniversary Dinner",
+      eventType: "Anniversary",
+      guests: 4,
+      readyBy: "May 10, 2025 · 7:30 PM",
+      status: "Pending",
+      quotesReceived: 0,
+      priceRange: "€80 - €100"
+    }
   ];
 
   const pastOrders = [

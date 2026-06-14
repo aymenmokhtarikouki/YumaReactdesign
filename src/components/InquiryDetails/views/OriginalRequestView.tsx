@@ -22,7 +22,7 @@ const OriginalRequestView = ({ id }: { id?: string }) => (
     initial={{ opacity: 0, scale: 0.98 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-    className="space-y-10 pb-20"
+    className="space-y-10 pb-20 font-inter"
   >
     {/* High-Level Brief Card */}
     <div className="bg-gray-900 rounded-[40px] p-8 text-white relative overflow-hidden group">

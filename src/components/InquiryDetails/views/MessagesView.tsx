@@ -19,7 +19,7 @@ const MessageBubble = ({ sender, text, time, isMe }: { sender: string; text: str
 );
 
 const MessagesView = ({ id }: { id?: string }) => (
-  <div className="flex flex-col h-full -mx-4 -mt-6">
+  <div className="flex flex-col h-full -mx-4 -mt-6 font-inter">
     {/* Chat Header Info */}
     <div className="px-6 py-4 bg-gray-50/50 flex items-center justify-between border-b border-gray-100 mb-6">
       <div className="flex items-center gap-4">

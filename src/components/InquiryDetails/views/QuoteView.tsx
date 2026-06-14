@@ -9,7 +9,7 @@ const QuoteView = ({ id, quote }: { id?: string; quote: any }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-    className="space-y-8 pb-32"
+    className="space-y-8 pb-32 font-inter"
   >
     {/* Elite Status Header */}
     <div className="bg-emerald-50/40 border border-emerald-100/50 rounded-[32px] p-6 flex items-start gap-5 relative overflow-hidden group">

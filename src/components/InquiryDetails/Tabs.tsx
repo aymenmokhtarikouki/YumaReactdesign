@@ -26,7 +26,7 @@ export const Tabs = ({ activeTab, onChange, id, onBack, isDetailView }: TabsProp
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white sticky top-0 z-50">
+    <div className="bg-white sticky top-0 z-50 font-inter">
       {/* Top Header */}
       <div className="flex items-center justify-between px-4 h-[64px] border-b border-gray-50">
         <div className="flex items-center gap-3">

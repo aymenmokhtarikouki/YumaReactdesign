@@ -18,7 +18,7 @@ export const InquiryDetailsPage = ({ id }: { id?: string }) => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-white overflow-hidden font-sans antialiased">
+    <div className="flex flex-col h-screen bg-white overflow-hidden font-inter antialiased">
       {/* Premium Navigation & Tabs Header */}
       <Tabs 
         activeTab={activeTab} 

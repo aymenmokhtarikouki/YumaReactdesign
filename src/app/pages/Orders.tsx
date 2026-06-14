@@ -65,47 +65,20 @@ export default function Orders() {
   ];
 
   const inquiries = [
+    // ... inquiries data ...
+  ];
+
+  const pastOrders = [
     {
-      id: "inq-101",
-      title: "Birthday Celebration",
-      eventType: "Birthday",
-      guests: 30,
-      readyBy: "Mar 30, 2025 · 6:00 PM",
-      status: "Pending",
-      quotesReceived: 0,
-      priceRange: "€120 - €180"
-    },
-    {
-      id: "inq-102",
-      title: "Engagement Party",
-      eventType: "Engagement",
-      guests: 50,
-      readyBy: "Apr 15, 2025 · 2:00 PM",
-      status: "Quoted",
-      quotesReceived: 3,
-      bestQuote: "€320",
-      priceRange: "€300 - €450"
-    },
-    {
-      id: "inq-103",
-      title: "Corporate Event",
-      eventType: "Corporate",
-      guests: 100,
-      readyBy: "May 01, 2025 · 10:00 AM",
-      status: "Received",
-      quotesReceived: 1,
-      bestQuote: "€600",
-      priceRange: "€500 - €800"
-    },
-    {
-      id: "inq-104",
-      title: "Anniversary Dinner",
-      eventType: "Anniversary",
-      guests: 4,
-      readyBy: "May 10, 2025 · 7:30 PM",
-      status: "Pending",
-      quotesReceived: 0,
-      priceRange: "€80 - €100"
+      id: "ord-102",
+      cook: "Giulia R.",
+      items: [
+        { name: "Caprese Salad", quantity: 1 }
+      ],
+      image: "https://images.unsplash.com/photo-1769458313937-b5ad8f84942e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXByZXNlJTIwc2FsYWQlMjB0b21hdG9lcyUyMG1venphcmVsbGElMjBiYXNpbHxlbnwxfHx8fDE3NzM2MDk4NTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      status: "Delivered",
+      price: "€6.50",
+      date: "Mar 12, 13:20"
     }
   ];
 
@@ -231,37 +204,17 @@ export default function Orders() {
 
         {viewMode === 'inquiries' && (
           inquiries.map(inquiry => (
-            <div key={inquiry.id} className="bg-white rounded-2xl p-4 border border-gray-100 active:opacity-70 transition-opacity cursor-pointer" onClick={() => navigate(`/inquiry/${inquiry.id}`)}>
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-900 border border-gray-100">
-                    <Cake className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="text-[15px] font-extrabold text-gray-900 leading-tight">{inquiry.title}</p>
-                    <p className="text-[12px] font-medium text-gray-500 mt-0.5">{inquiry.eventType} • {inquiry.guests} guests</p>
-                  </div>
-                </div>
-                <div className={`px-3 py-1 rounded-full border ${inquiry.status === 'Quoted' ? 'bg-green-50 border-green-100' : 'bg-gray-50 border-gray-100'}`}>
-                  <span className={`text-[11px] font-bold uppercase tracking-wider ${inquiry.status === 'Quoted' ? 'text-green-700' : 'text-gray-900'}`}>{inquiry.status}</span>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 border-t border-gray-100 pt-4 mt-2">
-                <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase">Ready By</p>
-                  <p className="text-[13px] font-bold text-gray-900">{inquiry.readyBy}</p>
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold text-gray-400 uppercase">Quotes</p>
-                  <p className="text-[13px] font-bold text-gray-900">
-                    {inquiry.quotesReceived > 0 
-                      ? `${inquiry.quotesReceived} received ${inquiry.bestQuote ? `(Best: ${inquiry.bestQuote})` : ''}` 
-                      : 'Waiting for quotes'}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <InquiryCard 
+              key={inquiry.id}
+              inquiry={{
+                ...inquiry,
+                refId: `#${inquiry.id.toUpperCase()}`,
+                description: inquiry.eventType,
+                requestedOn: 'Just now',
+                inspirationImage: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYXRlb3V0fGVufDF8fHx8MTc3MzYxMTkzNnww&ixlib=rb-4.1.0&q=80&w=200'
+              }}
+              onClick={() => navigate(`/inquiry/${inquiry.id}`)}
+            />
           ))
         )}
 

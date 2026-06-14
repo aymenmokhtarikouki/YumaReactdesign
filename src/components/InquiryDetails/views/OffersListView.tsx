@@ -45,11 +45,11 @@ const OffersListView = ({ onSelectQuote }: { onSelectQuote: (quote: Quote) => vo
     animate={{ opacity: 1 }}
     className="space-y-4 pb-20 bg-white font-inter"
   >
-    {/* Tesla-Style Header with Black Badge */}
+    {/* Header with Grey Badge */}
     <div className="flex items-center justify-between px-1.5 pt-4 mb-6">
       <h3 className="text-[22px] font-black text-gray-900 tracking-tight leading-none">Received Offer</h3>
-      <div className="px-3 py-1.5 bg-gray-900 rounded-[12px] flex items-center shadow-md shadow-gray-100">
-        <span className="text-[11px] font-bold text-white uppercase tracking-wider leading-none">
+      <div className="px-3 py-1.5 bg-gray-100 rounded-[12px] flex items-center">
+        <span className="text-[11px] font-black text-gray-600 uppercase tracking-widest leading-none">
           {quotes.length} Offer
         </span>
       </div>
@@ -66,7 +66,7 @@ const OffersListView = ({ onSelectQuote }: { onSelectQuote: (quote: Quote) => vo
           className="bg-white rounded-2xl p-4 border border-gray-100 relative group cursor-pointer active:opacity-70 transition-opacity"
         >
           {/* Main Info Row - Clean Essentials */}
-          <div className="flex items-center justify-between px-1 mb-6">
+          <div className="flex items-center justify-between px-1 mb-5">
 
             <div>
               <p className="text-[15px] font-extrabold text-gray-900 flex items-center gap-1.5 leading-none">
@@ -91,7 +91,7 @@ const OffersListView = ({ onSelectQuote }: { onSelectQuote: (quote: Quote) => vo
                 </span>
               </div>
               {quote.isBestValue && (
-                <div className="flex items-center gap-1 mt-1.5 px-2 py-0.5 bg-emerald-50 rounded-lg border border-emerald-100/30">
+                <div className="flex items-center gap-1 mt-2 px-2 py-1 bg-emerald-50 rounded-lg">
                    <Sparkles className="w-2.5 h-2.5 text-emerald-600" />
                    <span className="text-[9px] font-black text-emerald-600 uppercase tracking-widest">Recommended</span>
                 </div>

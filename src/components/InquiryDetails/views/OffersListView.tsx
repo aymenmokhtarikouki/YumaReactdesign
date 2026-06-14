@@ -46,14 +46,13 @@ const OffersListView = ({ onSelectQuote }: { onSelectQuote: (quote: Quote) => vo
     className="space-y-4 pb-20 bg-white font-inter"
   >
     {/* Tesla-Style Header with Black Badge */}
-    <div className="flex items-center justify-between px-1.5 pt-4 mb-2">
-      <h3 className="text-[22px] font-extrabold text-gray-900 tracking-tight leading-none">Received Offer</h3>
-      <div className="px-3 py-1.5 bg-gray-100 rounded-[12px] flex items-center">
-        <span className="text-[11px] font-black text-gray-600 uppercase tracking-widest leading-none">
+    <div className="flex items-center justify-between px-1.5 pt-4 mb-6">
+      <h3 className="text-[22px] font-black text-gray-900 tracking-tight leading-none">Received Offer</h3>
+      <div className="px-3 py-1.5 bg-gray-900 rounded-[12px] flex items-center shadow-md shadow-gray-100">
+        <span className="text-[11px] font-bold text-white uppercase tracking-wider leading-none">
           {quotes.length} Offer
         </span>
       </div>
-
     </div>
 
     <div className="space-y-3">
@@ -67,7 +66,8 @@ const OffersListView = ({ onSelectQuote }: { onSelectQuote: (quote: Quote) => vo
           className="bg-white rounded-2xl p-4 border border-gray-100 relative group cursor-pointer active:opacity-70 transition-opacity"
         >
           {/* Main Info Row - Clean Essentials */}
-          <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center justify-between px-1 mb-6">
+
             <div>
               <p className="text-[15px] font-extrabold text-gray-900 flex items-center gap-1.5 leading-none">
                 {quote.bakerName}

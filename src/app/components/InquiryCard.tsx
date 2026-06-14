@@ -9,19 +9,21 @@ interface Inquiry {
   guests: number;
   readyBy: string;
   requestedOn: string;
-  status: 'Pending' | 'Quoted' | 'Received';
+  status: string; // Changed from union to string
   quotesReceived: number;
   bestQuote?: string;
   inspirationImage: string;
 }
 
-const statusColors = {
+const statusColors: { [key: string]: string } = {
   Pending: 'bg-amber-50 text-amber-700 border-amber-100',
   Quoted: 'bg-emerald-50 text-emerald-700 border-emerald-100',
   Received: 'bg-blue-50 text-blue-700 border-blue-100',
+  Default: 'bg-gray-50 text-gray-700 border-gray-100',
 };
 
 export function InquiryCard({ inquiry, onClick }: { inquiry: Inquiry; onClick: () => void }) {
+  const colorClass = statusColors[inquiry.status] || statusColors.Default;
   return (
     <div 
       className="bg-white rounded-[24px] p-5 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-all cursor-pointer"
@@ -30,7 +32,7 @@ export function InquiryCard({ inquiry, onClick }: { inquiry: Inquiry; onClick: (
       {/* Header Row */}
       <div className="flex justify-between items-start mb-4">
         <span className="text-[11px] font-bold text-gray-400 tracking-wider uppercase">{inquiry.refId}</span>
-        <div className={`px-3 py-1 rounded-full border ${statusColors[inquiry.status]}`}>
+        <div className={`px-3 py-1 rounded-full border ${colorClass}`}>
           <span className="text-[11px] font-bold uppercase tracking-wider">{inquiry.status}</span>
         </div>
       </div>
